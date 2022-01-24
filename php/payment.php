@@ -74,22 +74,21 @@ $data = [
   ["name" => "ali","schedule" => "adadasd", "bn" => "04388243", "ba" => "234324", "date" => "08-Dec, 2021"]
 ];
 
-foreach($data as $value) {
+//foreach($data as $value) {
+  for($i = 0 ;$i < count($data); $i++){
+
   echo '
-
-  <div class="row row-cols-7  bg-white my-2 me-1">
-  <div class="col-12 col-lg pb-2" ><img  src="foo.png" alt=""></div>
-  <div class="col-12 col-lg py-3">'.$value['name'].'</div>
-  <div class="col-12 col-lg py-3">'.$value['schedule'].'</div>
-  <div class="col-12 col-lg py-3">'.$value['bn'].'</div>
-  <div class="col-12 col-lg py-3">'.$value['ba'].'</div>
-  <div class="col-12 col-lg py-3">'.$value['date'].'</div>
-  <div class="col-12 col-lg text-end py-3">
-    <a href="#"><img class="pe-2"  src="modif.png" alt=""></a>
-    <a href="#"><img src="poub.png" alt=""></a>
-  </div>
+  
+<div class="row row-cols-7 py-3 '.(($i%2==0)?'bg-light':'').' my-2 me-2" >
+<div class="col-12 col-lg" >'.$data[$i]['name'].'</div>
+<div class="col-12 col-lg">'.$data[$i]['schedule'].'</div>
+<div class="col-12 col-lg">'.$data[$i]['bn'].'</div>
+<div class="col-12 col-lg">'.$data[$i]['ba'].'</div>
+<div class="col-12 col-lg">'.$data[$i]['date'].'</div>
+<div class="col-12 col-lg text-end">
+  <a href="#"><img class="pe-2" src="view.png" alt=""></a>
 </div>
-
+</div>
 
   ';
   
